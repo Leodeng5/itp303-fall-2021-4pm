@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+    <head>
+        <title></title>
+        <style>
+            /* By default, the browser comes with default padding and margin. Get rid of them!! */
+            html, body {
+                margin: 0;
+                padding: 0;
+            }
+           /* CSS comments */
+           h1 {
+               color: blue;
+               font-size: 50px;
+               /* h1 comes with default margins. To get rid of them, set them to 0. */
+               margin-top: 0;
+               margin-bottom: 0;
+           }
+           img {
+               /* Alter the width OR height of an image (not both) to keep proportion of the image */
+               width: 100px;
+           }
+           /* To select an element's ID (instead of the tag name), prefix with # */
+           #image1 {
+               width: 300px;
+           }
+           h2 {
+               color: orange;
+           }
+           /* To select an element's class name, prefix with . */
+           .heading {
+               color: green;
+           }
+           #header {
+               background-color: yellow;
+               /* This property/value aligns the text INSIDE this #header div to the center */
+               text-align: center;
+           }
+           #biology {
+               background-color: pink;
+               /* Two ways to create spacing */
+               /* 1) PADDDING - creates spaces INSIDE an element (div in this case) */
+               padding-left: 15px;
+               padding-top: 15px;
+               padding-right: 15px;
+               padding-bottom: 15px;
+
+               /* 2) MARGIN - creates spaces OUTSIDE an element (div in this case) */
+               margin-left: 100px;
+           }
+           #facts{
+               background-color: #A0F9EA;
+               /* You can set a specific width to any div */
+               width: 500px;
+               /*  Center this div horizontally */
+                margin-left: auto;
+                margin-right: auto;
+
+               border-style: solid;
+               border-color: black;
+               border-width: 2px;
+
+           }
+        </style>
+    </head>
+    <body>
+        <!-- Comments in HTML -->
+        <!-- Any code written inside the body tag is shown on the browser-->
+
+        <div id="header">
+            <!-- h1 tag by default comes with bold, large text, and line break, and spacing -->
+            <h1>All About Pikachu</h1>
+        </div>
+
+        <div id="biology">
+            <h2>Biology</h2>
+
+            <!-- Two ways to source an image. -->
+            <!-- 1) Use a URL of an image that already exists somewhere -->
+            <img id="image1" src="https://www.kumulos.com/wp-content/uploads/2013/10/pikachu-6.png" alt="Pikachu sitting"/>
+
+            <!-- 2) Use an image that you own on your computer/machine. -->
+            <img id="image2" src="images/pikachu.jpeg" alt="pikachu" />
+
+            <p>Pikachu is a short, chubby rodent <strong>Pokémon</strong>. It is covered in yellow fur with two horizontal brown stripes on its back. It has a small mouth, long, pointed ears with black tips, brown eyes, and the two red circles on its cheeks contain pouches for electricity storage. It has short forearms with five fingers on each paw, and its feet each have three toes. At the base of its lightning bolt-shaped tail is a patch of brown fur. A female will have a V-shaped notch at the end of its tail, which looks like the top of a heart. It is classified as quadruped, but it has been known to stand and walk on its hind legs.</p>
+            <p>The anime has shown that wild Pikachu live in groups in forested areas. Pikachu communicates amongst themselves using squeaks and tail-shaking as friendly gestures. Electricity can be used to receive and send messages with each other, as well as other Electric Pokémon species. It raises its tail to check its surroundings and is occasionally struck by lightning in this position. When groups grow, they can inadvertently cause lightning storms. Pikachu is found foraging for berries it roasts with electricity to make them tender enough to eat. A sure sign that Pikachu inhabits a location is patches of burnt grass. It has been observed eating and sometimes destroying telephone poles, wires, and other electronic equipment.</p>
+        </div> <!-- end of #biology div-->
+
+        <div id="facts">
+            <h2 class="heading as hello lalala">Facts</h2>
+            <ul>
+                <li>is yellow</li>
+                <li>electric type</li>
+                <li>likes ketchup</li>
+            </ul>
+        </div>
+
+        <h2 class="heading">Contact</h2>
+        <a href="https://google.com" target="_blank">Click me!!!!</a>
+    </body>
+</html>
