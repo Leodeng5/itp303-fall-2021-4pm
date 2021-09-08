@@ -1,0 +1,53 @@
+html,body{
+	margin: 0;
+	padding: 0;
+	font-family: 'Oswald', sans-serif;
+}
+/* The asterisk selector (*) selects ALL elements in this HTML file. The below applies ALL elements in this HTML file to have box-sizing:border-box */
+* {
+	box-sizing: border-box;
+}
+
+/* Colors for each box. */
+.box1 { background-color: #011627; }
+.box2 { background-color: #EB5160; }
+.box3 { background-color: #030301; }
+.box4 { background-color: #00D9C0; }
+.box5 { background-color: #FF0022; }
+
+/* The parent */
+.container {
+	border: 10px solid skyblue;
+	display: flex;
+	/*  By default, the children elements (aka flex items) height grows as tall as the parent element */
+	/* By default, the children elements width are as wide as the contents inside them */
+	height: 500px;
+	/*  flex direction establishes the MAIN AXIS. It defines the direction flex items are placed in the flex container (left to right, right to left, top to bottom, or bottom to top)  */
+	flex-direction: row;
+
+	/* By default flex items will all try to fit onto one line. flex-wrap can change that to allow items to wrap. */
+	flex-wrap: nowrap;
+
+	/* justify content defines alignment along the MAIN AXIS, which is defined by flex-direction. */
+	justify-content: center;
+
+	/* align items defines alignment along the CROSS AXIS (which is the opposite of Main axis) */
+	align-items: center;
+}
+
+/* .container's direct children */
+.box {
+	color: white;
+	font-size: 28px;
+	/* Can still use pixels or percentages */
+	/* width: 20%; */
+	width: 100px;
+	margin: 10px
+}
+/* By default, all flex items have order: 0. The higher order value a flex item has, the later it will appear in order */
+.box2 {
+	order: 1;
+}
+.box1 {
+	order: 999999;
+}
