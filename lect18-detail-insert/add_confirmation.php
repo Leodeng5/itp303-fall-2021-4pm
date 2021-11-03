@@ -43,6 +43,12 @@ else {
 	else {
 		$composer = "null";
 	}
+	if(isset($_POST["bytes"]) && !empty($_POST["bytes"])) {
+		$bytes = $_POST["bytes"];
+	}
+	else {
+		$bytes = "null";
+	}
 
 	// Sanitize user input for track
 	// real_escape_string() takes care of special characters like ',; so that it doesn't affect the SQL statement. It adds escape characters to the special characters
@@ -56,7 +62,7 @@ else {
 	. $_POST["price"] . ", "
 	. $album_id . ", "
 	. $composer . ", "
-	. $_POST["bytes"] . ");";
+	. $bytes . ");";
 
 	// Display the sql statement to make sure it looks good
 	echo "<hr>" . $sql . "<hr>";
