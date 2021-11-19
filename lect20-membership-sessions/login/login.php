@@ -1,6 +1,8 @@
 <?php
-session_start();
+
 require '../config/config.php';
+// Using session variables, we can check if a user is logged in or not. If logged in, kick them out of this page
+if( !isset($_SESSION["logged_in"]) || !$_SESSION["logged_in"]) {
 
 	// If we get $_POST['username], it means user tried to submit the login form (as opposed to user just getting to the form page (GET request))
 	if ( isset($_POST['username']) && isset($_POST['password']) ) {
@@ -49,6 +51,11 @@ require '../config/config.php';
 			}
 		} 
 	}
+}
+else {
+	// This user is logged in so they don't need to see this page. Redirect them to the homage page.
+	header("Location: ../song-db/index.php");
+}
 ?>
 <!DOCTYPE html>
 <html>

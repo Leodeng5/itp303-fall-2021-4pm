@@ -1,4 +1,8 @@
 <?php
+	session_start(); // Still need to start a session to destory session
+	session_destroy(); // Destroys all existing session variables
+
+	// Typically if you want to store when a user logged out, you would insert a record in the database the time they logged out
 ?>
 <!DOCTYPE html>
 <html>

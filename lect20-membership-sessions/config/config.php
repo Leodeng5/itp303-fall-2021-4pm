@@ -1,4 +1,5 @@
 <?php
+session_start(); // This config file is included in almost every page so put session_start() here
 
 define('DB_HOST', '303.itpwebdev.com');
 define('DB_USER', 'nayeon_db_user');
