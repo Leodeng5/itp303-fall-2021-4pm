@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS3 Animations</title>
+	<style>
+		.box {
+			width: 10px;
+			height: 200px;
+			background-color: #FFE347;
+			font-size: 14px;
+
+			/* transition-property: background-color;
+			transition-duration: 0.5s;
+			transition-delay: 0s; */
+
+			/*shorthand way to write transition */
+			/* transition: background-color 0.5s 0s; */
+
+			/* Can add transitions to multiple properties  */
+			/* This transition kicks in whenever something triggers a change in this box (it could be hoever, click, etc) */
+			/* transition: background-color 0.5s 0s, width 1s 0s, font-size 0.5s 0s; */
+
+			transition: all 0.6s 0s;
+		}
+		.box:hover {
+			background-color: red;
+			font-size: 40px;
+			width: 500px;
+		}
+		.box2{
+			width: 200px;
+			height: 200px;
+			background-color: #EF767A;
+			margin-top: 20px;
+			margin-right: 20px;
+			float: left;
+			transform: rotate(45deg);
+		}
+		.box3 {
+			width: 200px;
+			height: 200px;
+			background-color: #EF767A;
+			margin-top: 20px;
+			margin-right: 20px;
+			float: left;
+			/* scale up/down its original width/height. maintains proportions, even the text. */
+			transform: scale(0.5);
+		}
+		.box4 {
+			width: 200px;
+			height: 200px;
+			background-color: #EF767A;
+			margin-top: 20px;
+			margin-right: 20px;
+			float: left;
+			transform: skew(30deg, 10deg);
+		}
+		.box5 {
+			width: 200px;
+			height: 200px;
+			background-color: #EF767A;
+			margin-top: 20px;
+			margin-right: 20px;
+			float: left;
+			transform: translate(50px, -100px);
+		}
+		.clear {
+			clear: both;
+		}
+		.box6 {
+			width: 200px;
+			height: 200px;
+			margin-top: 60px;
+			background-color: #7D7ABC;
+			/* default state */
+			transform: scale(1) translate(0px, 0px) rotate(0deg);
+			transition: transform 0.5s 0s;	
+		}
+		.box6:hover {
+			transform: scale(2) translate(200px, 0px) rotate(1080deg);
+		}
+		.img-container {
+			width: 500px;
+			margin-top: 20px;
+			position: relative;
+		}
+		.img-container img {
+			width: 100%;
+			display: block;
+		}
+		.img-container .overlay {
+			background-color: rgba(0, 0, 0, 0.6);
+			color: #FFF;
+			text-align: center;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			right: 0px;
+			bottom: 0px;
+			/* By default, hide the overlay */
+			/* The text and red button are children of overlay so they also get hidden if overlay is hidden */
+			opacity: 0;
+			transition: 1s 0s;
+		}
+		.img-container:hover .overlay {
+			opacity: 1;
+		}
+		.img-container p {
+			position: absolute;
+			top: 100px;
+			text-align: center;
+			width: 100%;
+			font-size: 40px;
+			/* By default, text is hugeee */
+			transform: scale(3);
+			transition: transform 1s 0s linear;
+		}
+		.img-container:hover p {
+			transform: scale(1);
+		}
+		.img-container a {
+			text-decoration: none;
+			display: block;
+			background-color: #900;
+			color: #FFF;
+			width: 120px;
+			line-height: 40px;
+			text-align: center;
+			position: absolute;
+			bottom: 80px;
+			left: 0px;
+			right: 0px;
+			margin-left: auto;
+			margin-right: auto;
+
+			/* By default, hide the red button */
+			opacity: 0;
+			/* When hover out, red button disappears immediately, without delay */
+			transition: opacity 1s 0s;
+		}
+		.img-container:hover a {
+			opacity: 1;
+			/* When hover in, red button shows after a delay of 1s */
+			transition: opacity 1s 1s;
+		}
+		#button {
+			margin-top: 50px;
+		}
+		@keyframes move {
+			0%{
+				transform: translate(0px, 0);	
+			}
+			15% {
+				transform: translate(100px, 0px);
+				width: 400px;	
+			}
+			50% {
+				transform: translate(100px, 300px);
+				background-color: green;
+			}
+			100% {
+				transform: translate(0px, 0px);
+			}
+		}
+		.box7 {
+			width: 200px;
+			height: 200px;
+			background-color: skyblue;
+			margin-top: 20px;
+			margin-right: 20px;
+			margin-bottom: 400px;
+		}
+		.animate {
+			animation-name: move;
+			animation-duration: 5s;
+			animation-delay: 0s;
+			animation-iteration-count: 1;
+		}
+	</style>
+</head>
+<body>
+	<div class="outercontainer">
+
+		<div class="box">
+			Hello, I'm a box.
+		</div>
+
+		<div class="box2">
+			Hello, I'm a rotating box.
+		</div>
+
+		<div class="box3">
+			Hello, I'm a scaled box
+		</div>
+
+		<div class="box4">
+			Hello, I'm a skewed box
+		</div>
+
+		<div class="box5">
+			Hello, I'm a box that translates.
+		</div>
+
+		<div class="clear"></div>
+
+		<div class="box6">
+			Hello, I'm another box.
+		</div>
+		<div class="img-container">
+			<img src="https://media.altpress.com/uploads/2018/07/pikachu_pokemongo_header2016-1-696x449.png" alt="Pikachu"/>
+			<div class="overlay">
+				<p>Pikachu</p>
+				<a href="#">Read More</a>
+			</div>
+		</div>
+
+		<button id="button">Trigger animation</button>
+
+		<div class="box7">
+			Box 7
+		</div>
+	</div>
+	
+	<script>
+		document.querySelector("#button").onclick = function() {
+			document.querySelector(".box7").classList.remove("animate");
+			// Add a delay
+			setTimeout(function() {
+				document.querySelector(".box7").classList.add("animate");
+			}, 300);
+			
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
